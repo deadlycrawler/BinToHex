@@ -62,6 +62,7 @@ public class Main extends Application {
 
     String convertToHex(String BinaryString) {
         BinaryString = BinaryString.replace("\n"," ");
+        BinaryString = BinaryString.trim();
         BinaryString = BinaryString.replace("  "," ");
         String[] SeparatedBinary = BinaryString.split(" ");
 
@@ -72,11 +73,15 @@ public class Main extends Application {
             int decimal = Integer.parseInt(SeparatedBinary[i], 2);
             Hex = Hex + Integer.toString(decimal, 16) + " ";
         }
+
+        Hex = Hex.trim();
+
         return Hex;
     }
 
     String convertToBin(String HexString) {
         HexString = HexString.replace("\n"," ");
+        HexString = HexString.trim();
         HexString = HexString.replace("  "," ");
         String[] SeperatedHex = HexString.split(" ");
         String Bin = "";
@@ -91,6 +96,7 @@ public class Main extends Application {
                 Bin += "\n";
             }
         }
+        Bin = Bin.trim();
 
 
         return Bin;
